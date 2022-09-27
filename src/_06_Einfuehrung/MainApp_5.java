@@ -1,5 +1,6 @@
 package _06_Einfuehrung;
 
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class MainApp_5 {
 
         boolean run = true;
         do {
-            int counter = 0;
+            int counter = 1;
             do {
                 int value = random.nextInt();
 

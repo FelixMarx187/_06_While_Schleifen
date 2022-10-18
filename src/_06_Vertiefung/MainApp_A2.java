@@ -21,13 +21,14 @@ public class MainApp_A2 {
             System.out.println("Erraten Sie die Zufahlszahl in moeglichst wenigen Schritten!");
             System.out.println("Die Zahl kann zwischen 1 und 100 liegen");
 
-            zufallZahl = 0 + random.nextInt(100- 0 + 1);
+            zufallZahl = random.nextInt(1, 100);
             int eingabe = 0;
-            int versuche = 1;
+            int versuche = 0;
 
-            while(eingabe != zufallZahl){
+            while(versuche < 5){
                 System.out.println("Bitte eine Zahl eingeben: ");
                 eingabe = scanner.nextInt();
+                System.out.println(zufallZahl);
 
                 if(eingabe < 0 || eingabe > 100){
                     System.out.println("Ungültige Eignabe. Bitte Eingabe wiederholen:");
@@ -42,15 +43,13 @@ public class MainApp_A2 {
                     break;
                 }
             }
-            if (versuche >= 5) {
-                System.out.println("Weiter spielen? (j = Ja. | n = Nein.");
-                antwort = scanner.next();
-                if(antwort.compareTo("j") == 0){
-                    run = true;
-                    System.out.println();
-                }else{
-                    run = false;
-                }
+            System.out.println("Weiter spielen? (J/N)");
+            antwort = scanner.next();
+            if(antwort.toLowerCase().equals("j")) {
+                run = true;
+                System.out.println();
+            }else{
+                run = false;
             }
         }
     }
